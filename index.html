@@ -37,6 +37,9 @@
             cursor: pointer;
             text-decoration: none;
         }
+        .qr-code {
+            margin-top: 20px;
+        }
         @media (max-width: 600px) {
             .icon1 {
                 font-size: 70px;
@@ -56,9 +59,23 @@
     <div class="Mes">
         <i class="fas fa-thumbs-up icon1"></i>
         <div class="message">
-            THANKS FOR SUBMITTING THE FORM, CONFIRMATION MAIL WILL REACH YOU SOON!!
+            <h1>Thank you for your submission!</h1>
+            <p>Your QR code has been generated successfully.</p>
         </div>
-        <a href="https://sistsigai.acm.org/" class="back-button">GO BACK</a>
+        <div class="qr-code">
+            <img id="qrCodeImage" alt="QR Code" />
+        </div>
+        <a href="index.html" class="back-button">Go back</a>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const qrCode = localStorage.getItem('qrCode');
+            if (qrCode) {
+                const qrCodeImage = document.getElementById('qrCodeImage');
+                qrCodeImage.src = `data:image/png;base64,${qrCode}`;
+            }
+        });
+    </script>
 </body>
 </html>
