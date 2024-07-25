@@ -60,22 +60,10 @@
         <i class="fas fa-thumbs-up icon1"></i>
         <div class="message">
             <h1>Thank you for your submission!</h1>
-            <p>Your QR code has been generated successfully.</p>
+            
         </div>
-        <div class="qr-code">
-            <img id="qrCodeImage" alt="QR Code" />
-        </div>
-        <a href="index.html" class="back-button">Go back</a>
-    </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            const qrCode = localStorage.getItem('qrCode');
-            if (qrCode) {
-                const qrCodeImage = document.getElementById('qrCodeImage');
-                qrCodeImage.src = `data:image/png;base64,${qrCode}`;
-            }
-        });
-    </script>
+
+   
 </body>
 </html>
